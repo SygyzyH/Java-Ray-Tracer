@@ -13,6 +13,8 @@ public class View {
     public static Scene scene;
     public static Camera camera;
     public static Sphere sky;
+    
+    public static long sensitivity = (long) 4e15;
 
     public View() {
 
