@@ -70,7 +70,35 @@ public class Triangle extends Shape {
 
     @Override
     public Color getTextureColor(Vec3 p) {
-        // TODO
-        return null;
+        // first, convert 3D cartesian to barycentric
+        // get all mark points
+        Vec3 v0 = this.pos2.sub(this.pos), v1 = this.pos3.sub(this.pos), v2 = p.sub(this.pos);
+        double d00 = v0.dot(v0);
+        double d01 = v0.dot(v1);
+        double d11 = v1.dot(v1);
+        double d20 = v2.dot(v0);
+        double d21 = v2.dot(v1);
+
+        // get denominator
+        double denom = d00 * d11 - d01 * d01;
+
+        // convert to points (u, v, w)
+        double u, v, w;
+        v = (d11 * d20 - d01 * d21) / denom;
+        w = (d00 * d21 - d01 * d20) / denom;
+        u = 1 - v - w;
+
+        // now we can convert back to 2D cartesian
+        double x, y;
+
+        // assuming Auv(0, 0), Buv(0, 1), Cuv(1, 0)
+        x = w;
+        y = u;
+
+        // convert relative point to be in the texture
+        x *= this.visualProperty.texture.getWidth();
+        y *= this.visualProperty.texture.getHeight();
+
+        return this.visualProperty.getTextureColorAt(x, y);
     }
 }
