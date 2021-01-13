@@ -45,6 +45,10 @@ public class VisualProperty {
         this.isReflective = true;
         this.isTextured = true;
     }
+    
+    public Color getTextureColorAt(double u, double v) {
+        return Color.convert(new java.awt.Color(texture.getRGB((int) u, (int) v), true));
+    }
 
     public VisualProperty clone() {
         return new VisualProperty(this.color, this.texture, this.reflectivity, this.emission);
