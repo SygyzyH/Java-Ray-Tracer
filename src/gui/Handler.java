@@ -33,7 +33,7 @@ public class Handler {
             cam.translate(cam.getUpGuide().mult(-.1));
 
         // move the camera based on last movement with the mouse
-        cam.rotate(Driver.mousePosition.x * Driver.lastTime / 4e17, Driver.mousePosition.y * Driver.lastTime / 4e17);
+        cam.rotate(Driver.mousePosition.x * Driver.lastTime / View.sensitivity, Driver.mousePosition.y * Driver.lastTime / View.sensitivity);
 
         if (Window.frame.isActive() && Window.frame.isFocused())
             // only move the mouse if the user is actually in the application
