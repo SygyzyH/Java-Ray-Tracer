@@ -3,7 +3,7 @@ A ray tracing algorithm implementation in pure java.
 ![alt text](https://github.com/SygyzyH/Java-Ray-Tracer/blob/main/Thumbnail.png?raw=true)
 
 ## Parameters
-I encourge you te mess around with the parameters and the scene to see what instances you can make. If you are unable to run this with your machine, lowering the resolution may help. Changing the rendering mode to FAST_MODE may also help.
+I encourge you to mess around with the parameters and the scene to see what instances you can make. If you are unable to run this with your machine, lowering the resolution may help. Changing the rendering mode to FAST_MODE may also help.
 
 There are also other rendering modes, depending on what you would like to achive:
 - **FAST_MODE**: as mentioned before, this mode will attempt to render the least rays possible. Best performance, worst looks
