@@ -57,7 +57,7 @@ public class Triangle extends Shape {
         // the normal of a triangle is the vector cross product of two edges of that triangle
         Vec3 v = this.pos2.sub(this.pos), w = this.pos3.sub(this.pos);
 
-        return v.cross(w).get_normalized().mult(-1);
+        return w.cross(v).get_normalized();
     }
 
     @Override
